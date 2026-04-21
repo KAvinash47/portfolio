@@ -198,7 +198,7 @@ const LoadingScreen = ({ onComplete }) => {
               textShadow: '0 0 16px rgba(0,243,255,0.4), 0 2px 6px rgba(0,0,0,0.8)',
             }}
           >
-            ARUN_OS v4.0
+            AVINASH_OS v4.0
           </span>
         </motion.div>
 

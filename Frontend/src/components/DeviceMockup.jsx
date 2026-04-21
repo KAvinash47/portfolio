@@ -70,7 +70,7 @@ const DeviceMockup = () => {
             </div>
             <div className="flex items-center gap-2 px-3 py-1 bg-black/40 rounded-full border border-white/5">
               <Code2 className="w-3 h-3 text-neon-blue" />
-              <span className="text-[10px] font-mono text-gray-400">production.arun.dev</span>
+              <span className="text-[10px] font-mono text-gray-400">avinash-kumar.me</span>
             </div>
           </div>
 

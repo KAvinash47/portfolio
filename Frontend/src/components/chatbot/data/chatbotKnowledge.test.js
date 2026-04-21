@@ -18,8 +18,8 @@ assert.equal(fallbackIntent.id, 'fallback');
 assert.match(fallbackIntent.reply, /projects/i);
 assert.match(fallbackIntent.reply, /skills|tech stack/i);
 
-const contactIntent = resolvePortfolioIntent('how can i contact arun', knowledgeBase);
+const contactIntent = resolvePortfolioIntent('how can i contact avinash', knowledgeBase);
 assert.equal(contactIntent.id, 'contact');
-assert.match(contactIntent.reply, /arunsk1310@gmail.com/i);
+assert.match(contactIntent.reply, /k.avinash000001@gmail.com/i);
 
 console.log('chatbotKnowledge tests passed');

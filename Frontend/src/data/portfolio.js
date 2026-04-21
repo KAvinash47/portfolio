@@ -130,7 +130,7 @@ export const projects = [
       "Optimized database performance by transforming individual writes into bulk transactional operations."
     ],
     links: {
-      github: "https://github.com/Arun-kushwaha007/pdf-to-csv/", 
+      github: "https://github.com/KAvinash47/pdf-to-csv/", 
      
     },
     image: "/assets/pdf2csv.png"
@@ -146,7 +146,7 @@ export const projects = [
       "Reduced DB reads by 60% via Redis-backed Socket.IO session & task cache."
     ],
     links: {
-      github: "https://github.com/Arun-kushwaha007/Deadline",
+      github: "https://github.com/KAvinash47/Deadline",
       demo: "https://collab-nest-home.vercel.app/"
     },
     image: "/assets/collab.png"
@@ -161,7 +161,7 @@ export const projects = [
       "Evaluated model on a held-out dataset (reported accuracy in project notes)."
     ],
     links: {
-      github: "https://github.com/Arun-kushwaha007/RJPOLICE_HACK_991_The-Crusade_4"
+      github: "https://github.com/KAvinash47/RJPOLICE_HACK_991_The-Crusade_4"
     },
     image: "/assets/fir.png"
   },
@@ -175,7 +175,7 @@ export const projects = [
       "Processing 100+ daily analysis requests with average response time under 300ms."
     ],
     links: {
-      github: "https://github.com/Arun-kushwaha007/Resume-Roaster.git"
+      github: "https://github.com/KAvinash47/Resume-Roaster.git"
     },
     image: "/assets/rr.png"
   },
@@ -190,7 +190,7 @@ export const projects = [
       "Scaled rendering to 200+ vehicles at 30 FPS."
     ],
     links: {
-      github: "https://github.com/Arun-kushwaha007/Self-Driving-Car-Simulation",
+      github: "https://github.com/KAvinash47/Self-Driving-Car-Simulation",
       demo: "https://self-driving-car-simulation-five.vercel.app/"
     },
     image: "/assets/nn.png"
@@ -206,7 +206,7 @@ export const projects = [
       "Deployed with CI/CD pipelines achieving 99% uptime."
     ],
     links: {
-      github: "https://github.com/Arun-kushwaha007/RealTime-Chat-app",
+      github: "https://github.com/KAvinash47/RealTime-Chat-app",
       demo: "https://real-time-chat-app-client-taupe.vercel.app/"
     },
     image: "/assets/chat.png"
