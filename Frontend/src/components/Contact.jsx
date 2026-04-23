@@ -1,44 +1,46 @@
 import { profile } from '../data/portfolio';
 import { Section } from './ui/Section';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   return (
     <Section id="contact" className="ml-8 md:ml-0">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          Get in Touch
+        <h2 className="text-4xl md:text-6xl font-black mb-8 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent tracking-tighter">
+          GET IN TOUCH
         </h2>
         
-        <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-          I'm currently open to new opportunities and would love to hear from you. 
-          Whether you have a question or just want to say hi, feel free to reach out.
+        <p className="text-xl text-gray-300 mb-12 leading-relaxed font-mono">
+          Ready to start your next big project? <br className="hidden md:block" />
+          I'm currently available for freelance web development and engineering roles.
         </p>
 
         <div className="flex flex-wrap justify-center gap-6 mb-12">
           <a 
             href={`mailto:${profile.email}`}
-            className="flex items-center gap-3 px-6 py-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors border border-white/10"
+            className="flex items-center gap-3 px-6 py-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all border border-white/10 group"
           >
-            <div className="p-2 bg-blue-500/20 rounded-lg">
-              <Mail className="w-6 h-6 text-blue-400" />
+            <div className="p-2 bg-blue-500/20 rounded-lg group-hover:bg-blue-500 group-hover:text-white transition-all">
+              <Mail className="w-6 h-6 text-blue-400 group-hover:text-white" />
             </div>
             <div className="text-left">
-              <p className="text-sm text-gray-400">Email</p>
+              <p className="text-xs text-gray-500 uppercase font-mono font-bold">Email</p>
               <p className="text-white font-medium">{profile.email}</p>
             </div>
           </a>
 
           <a 
-            href={`tel:${profile.phone}`}
-            className="flex items-center gap-3 px-6 py-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors border border-white/10"
+            href={`https://wa.me/917976739844`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-6 py-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all border border-white/10 group"
           >
-            <div className="p-2 bg-green-500/20 rounded-lg">
-              <Phone className="w-6 h-6 text-green-400" />
+            <div className="p-2 bg-green-500/20 rounded-lg group-hover:bg-green-500 group-hover:text-white transition-all">
+              <MessageCircle className="w-6 h-6 text-green-400 group-hover:text-white" />
             </div>
             <div className="text-left">
-              <p className="text-sm text-gray-400">Phone</p>
-              <p className="text-white font-medium">{profile.phone}</p>
+              <p className="text-xs text-gray-500 uppercase font-mono font-bold">WhatsApp</p>
+              <p className="text-white font-medium">+91 79767 39844</p>
             </div>
           </a>
 
@@ -47,17 +49,20 @@ const Contact = () => {
               <MapPin className="w-6 h-6 text-purple-400" />
             </div>
             <div className="text-left">
-              <p className="text-sm text-gray-400">Location</p>
+              <p className="text-xs text-gray-500 uppercase font-mono font-bold">Location</p>
               <p className="text-white font-medium">{profile.location}</p>
             </div>
           </div>
         </div>
 
         <a
-          href={`mailto:${profile.email}`}
-          className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-blue-500/25"
+          href={`https://wa.me/917976739844`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-green-600 to-green-500 rounded-full text-white font-black text-xl hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(34,197,94,0.3)] uppercase tracking-widest"
         >
-          Say Hello
+          <MessageCircle className="w-6 h-6" />
+          Discuss Your Project
         </a>
       </div>
     </Section>

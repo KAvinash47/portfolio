@@ -20,20 +20,20 @@ import {
 
 export const profile = {
   name: "Avinash Kumar",
-  role: "Aspiring Software Engineer | Proficient in C/C++ and AI-Web Integration",
-  summary: "I’m Avinash Kumar, a first-year B.Tech Computer Science student at Poornima University, Jaipur, with a strong passion for technology, innovation, and creative problem-solving. Over the past 4–5 years, I’ve explored computers and software development deeply, building a versatile skill set that combines programming, AI automation, and web development.",
+  role: "Expert Website Developer | Helping Businesses Grow Online",
+  summary: "I help small and big businesses get more customers by making beautiful and fast websites. I take care of everything, from the design to making it work perfectly on your mobile phone.",
   hero: {
-    eyebrow: "Software Engineer • AI Integration • Web Development",
+    eyebrow: "Get a Professional Website for Your Business",
     headline: "Avinash Kumar",
     summary:
-      "I’m the kind of learner who doesn’t wait for instructions — I experiment, research, and build software that pushes boundaries.",
+      "I build websites that help you get more orders and more customers. Very easy to use, very fast to open, and looks great on all mobile phones.",
     primaryCta: {
-      label: "View Projects",
+      label: "See My Work",
       href: "#projects",
     },
     secondaryCta: {
-      label: "Contact Me",
-      href: "#contact",
+      label: "Chat on WhatsApp",
+      href: "https://wa.me/917976739844",
     },
   },
   location: "Jaipur, Rajasthan, India",
@@ -225,6 +225,39 @@ export const projects = [
     },
     image: "/assets/resq.png"
   },
+];
+
+export const services = [
+  {
+    title: "Complete Website Made for You",
+    description: "I will make a full website exactly how you want it, to help your business look professional and grow.",
+    icon: Globe
+  },
+  {
+    title: "Online Shop (E-Commerce)",
+    description: "Start selling your products online. I will set up everything so your customers can buy directly from your website.",
+    icon: Database
+  },
+  {
+    title: "Works Perfectly on Phones",
+    description: "Most people use phones. Your website will look beautiful and be very easy to use on every mobile and tablet.",
+    icon: Smartphone
+  },
+  {
+    title: "Website Care & Support",
+    description: "I don't just build it and leave. I will keep your website updated, safe, and running smoothly every day.",
+    icon: Server
+  },
+  {
+    title: "Get More Customers from Google",
+    description: "I will help your website show up when people search for your business or products on Google.",
+    icon: Layout
+  },
+  {
+    title: "Super Fast Opening Speed",
+    description: "No one likes a slow website. I make sure your site opens instantly so you don't lose any customers.",
+    icon: Cpu
+  }
 ];
 
 export const education = {

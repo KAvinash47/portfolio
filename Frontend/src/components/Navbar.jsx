@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { User, Briefcase, Code, Cpu, Mail, Home, Terminal } from 'lucide-react';
+import { User, Briefcase, Code, Cpu, Mail, Home, Terminal, Layers } from 'lucide-react';
 import useCyberpunkSound from '../hooks/useCyberpunkSound';
 import { useMatrix } from '../context/MatrixContext';
 
@@ -12,6 +12,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', icon: Home, href: '#' },
     { name: 'About', icon: User, href: '#about' },
+    { name: 'Services', icon: Layers, href: '#services' },
     { name: 'Experience', icon: Briefcase, href: '#experience' },
     { name: 'Projects', icon: Code, href: '#projects' },
     { name: 'Skills', icon: Cpu, href: '#skills' },

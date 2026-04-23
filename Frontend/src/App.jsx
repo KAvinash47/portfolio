@@ -5,6 +5,8 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Services from './components/Services';
+import Process from './components/Process';
 import Footer from './components/Footer';
 import CustomCursor from './components/ui/CustomCursor';
 import CyberpunkOverlay from './components/ui/CyberpunkOverlay';
@@ -92,6 +94,8 @@ function App() {
               <main>
                 <Hero />
                 <About />
+                <Services />
+                <Process />
                 <Suspense fallback={null}>
                   <Experience />
                   <Projects />
