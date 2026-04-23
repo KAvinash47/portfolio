@@ -304,7 +304,7 @@ const TerminalCLI = () => {
             animate={{ scale: 1, rotate: 0 }}
             exit={{ scale: 0, rotate: 20 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-20 left-4 md:bottom-6 md:left-6 z-[110] flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-2xl border-2 border-neon-green/40 bg-black/80 text-neon-green shadow-[0_0_20px_rgba(10,255,10,0.2)] transition-all hover:border-white hover:text-white group"
+            className="fixed bottom-24 right-4 md:bottom-6 md:left-6 z-[110] flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-2xl border-2 border-neon-green/40 bg-black/80 text-neon-green shadow-[0_0_20px_rgba(10,255,10,0.2)] transition-all hover:border-white hover:text-white group"
           >
             <Terminal className="h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:scale-110" />
             <div className="absolute inset-0 rounded-2xl bg-neon-green/5 animate-pulse" />

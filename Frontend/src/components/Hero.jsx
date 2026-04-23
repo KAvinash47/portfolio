@@ -242,7 +242,7 @@ const Hero = () => {
     <section
       id="home"
       ref={ref}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-y-visible z-30 px-4 md:px-20 selection:bg-neon-blue/30"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-y-visible z-30 px-4 md:px-20 selection:bg-neon-blue/30 pt-20 md:pt-0"
     >
       {/* Background Layers */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -251,11 +251,11 @@ const Hero = () => {
         <div className="absolute bottom-[10%] right-[-10%] w-[40vw] h-[40vw] bg-neon-purple/5 blur-[120px] rounded-full" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 order-2 lg:order-1 text-center lg:text-left">
                 <Motion.div
                     style={{ y: yText }}
                     initial={{ opacity: 0, y: 30 }}
@@ -265,7 +265,7 @@ const Hero = () => {
                     onMouseLeave={() => setCursorType('default')}
                 >
                     {/* Available Status */}
-                    <div className="flex items-center gap-3 mb-6 md:mb-10">
+                    <div className="flex items-center justify-center lg:justify-start gap-3 mb-6 md:mb-10">
                         <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full">
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-green opacity-75"></span>
@@ -277,34 +277,34 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-white leading-[1.05] tracking-tighter mb-4 md:mb-8 cursor-default">
-                        Design. Code. <br />
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[0.95] lg:leading-[1.05] tracking-tighter mb-6 md:mb-8 cursor-default">
+                        Design. Code. <br className="hidden sm:block" />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple">
                           Engineering.
                         </span>
                     </h1>
 
-                    <p className="text-md md:text-xl text-gray-400 font-light leading-relaxed max-w-xl mb-6 md:mb-12">
+                    <p className="text-base md:text-xl text-gray-400 font-light leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 md:mb-12">
                         {profile.hero.summary}
                     </p>
 
                     {/* Action Area */}
-                    <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-8">
+                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-8">
                         <Motion.a
                             href={profile.hero.primaryCta.href}
                             style={{ x: xSpring, y: ySpring }}
                             onMouseMove={handleMagnetic}
                             onMouseLeave={resetMagnetic}
-                            className="relative group px-4 py-2 md:px-10 md:py-5 bg-white text-black rounded-full overflow-hidden transition-all duration-300 transform active:scale-95 flex items-center gap-3"
+                            className="w-full sm:w-auto max-w-[280px] sm:max-w-none relative group px-8 py-4 md:px-10 md:py-5 bg-white text-black rounded-full overflow-hidden transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-3"
                         >
-                            <span className="relative z-10 font-bold uppercase tracking-widest text-[10px] md:text-xs">View My Work</span>
+                            <span className="relative z-10 font-bold uppercase tracking-widest text-xs">View My Work</span>
                             <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             <div className="absolute inset-0 bg-neon-blue translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                         </Motion.a>
 
                         <a 
                             href={profile.hero.secondaryCta.href}
-                            className="text-gray-400 hover:text-white font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase transition-all flex items-center gap-3 group"
+                            className="text-gray-400 hover:text-white font-mono text-xs tracking-[0.3em] uppercase transition-all flex items-center gap-3 group"
                         >
                             <span className="group-hover:translate-x-1 transition-transform inline-block">Contact Me</span>
                             <div className="h-px w-8 bg-gray-800 transition-all group-hover:bg-neon-purple group-hover:w-12 ml-2" />
@@ -314,7 +314,7 @@ const Hero = () => {
             </div>
 
             {/* Right Visual Column */}
-            <div className="lg:col-span-5 relative -mt-20 md:mt-0">
+            <div className="lg:col-span-5 order-1 lg:order-2 relative -mt-4 lg:mt-0">
                 <Motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}

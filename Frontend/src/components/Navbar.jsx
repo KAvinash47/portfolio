@@ -19,8 +19,8 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="fixed bottom-4 md:bottom-4 left-1/2 -translate-x-1/2 z-[100] w-[90%] md:w-auto max-w-md md:max-w-none">
-      <div className="flex items-end justify-between md:justify-center gap-1 md:gap-2 px-3 py-2 md:px-4 md:py-3 bg-black/40 backdrop-blur-xl border border-white/10 rounded-lg md:rounded-2xl shadow-2xl shadow-neon-blue/10">
+    <div className="fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] md:w-auto max-w-[400px] md:max-w-none">
+      <div className="flex items-center justify-center gap-1.5 md:gap-3 px-3 py-2 md:px-5 md:py-3 bg-black/60 backdrop-blur-2xl border border-white/10 rounded-2xl md:rounded-3xl shadow-2xl shadow-neon-blue/20">
         {navLinks.map((link, index) => {
           const isHovered = hoveredIndex === index;
           
@@ -28,29 +28,30 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
+              aria-label={link.name}
               onMouseEnter={() => {
                 setHoveredIndex(index);
                 playSound('hover');
               }}
               onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => playSound('click')}
-              className="relative group"
+              className="relative group flex-1 md:flex-none"
             >
               <motion.div
                 animate={{
-                  scale: isHovered ? 1.2 : 1, // Reduced scale for mobile
-                  y: isHovered ? -5 : 0,
+                  scale: isHovered ? 1.15 : 1,
+                  y: isHovered ? -4 : 0,
                 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className="p-2 md:p-3 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-neon-blue/50 transition-colors relative"
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                className="flex items-center justify-center p-2.5 md:p-3.5 rounded-xl md:rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-neon-blue/40 transition-all relative overflow-hidden"
               >
-                <link.icon className={`w-4 h-4 md:w-5 md:h-5 ${isHovered ? 'text-neon-blue' : 'text-gray-400'}`} />
+                <link.icon className={`w-4.5 h-4.5 md:w-5.5 md:h-5.5 transition-colors duration-300 ${isHovered ? 'text-neon-blue' : 'text-gray-400'}`} />
                 
                 {/* Reflection/Glow */}
                 {isHovered && (
                   <motion.div
                     layoutId="glow"
-                    className="absolute inset-0 rounded-xl bg-neon-blue/20 blur-md -z-10"
+                    className="absolute inset-0 rounded-xl md:rounded-2xl bg-neon-blue/15 blur-md -z-10"
                   />
                 )}
               </motion.div>

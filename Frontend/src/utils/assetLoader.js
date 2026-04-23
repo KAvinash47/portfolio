@@ -59,7 +59,7 @@ export const preloadAllAssets = (onProgress) => {
     if (onProgress) onProgress(progress);
   };
 
-  const imagePromises = IMAGE_SETS.flatMap((set) => {
+  const loadImageSet = (set) => {
     return Array.from({ length: set.count }, (_, i) => {
       return new Promise((resolve) => {
         const img = new Image();
@@ -76,41 +76,44 @@ export const preloadAllAssets = (onProgress) => {
         };
       });
     });
-  });
+  };
+
+  const criticalImages = loadImageSet(IMAGE_SETS[0]); // Only wait for heroIdle
+  const backgroundImages = IMAGE_SETS.slice(1).flatMap(loadImageSet);
 
   const audioPromises = AUDIO_FILES.map((id) => {
     return new Promise((resolve) => {
       const audio = new Audio();
       audio.src = `/assets/audio/chatbot/${id}.mp3`;
       
-      // We use oncanplaythrough for better "ready" state, 
-      // but since many might be missing, we also handle error
       audio.oncanplaythrough = () => {
         assetCache.audio[id] = audio;
         updateProgress();
         resolve();
-        audio.oncanplaythrough = null; // Prevent multiple calls
+        audio.oncanplaythrough = null;
       };
 
       audio.onerror = () => {
-        // Many audio files might not exist yet, we don't want to block
         updateProgress();
         resolve();
       };
 
-      // Start loading
       audio.load();
     });
   });
 
-  return Promise.all([...imagePromises, ...audioPromises]).then(() => {
-    console.log('[AssetLoader] All assets loaded successfully:', {
-      idle: assetCache.heroIdle.length,
-      move: assetCache.heroMove.length,
-      chat: assetCache.chatbotAvatar.length,
-      audio: Object.keys(assetCache.audio).length
-    });
+  // Background loading for non-critical assets
+  Promise.all([...backgroundImages, ...audioPromises]).then(() => {
+    console.log('[AssetLoader] All background assets finished loading.');
     assetCache.isLoaded = true;
+    notifyListeners();
+  });
+
+  // Only block on the critical idle animation
+  return Promise.all(criticalImages).then(() => {
+    console.log('[AssetLoader] Critical assets loaded, ready to start.');
+    // We don't set isLoaded=true here since we are still loading bg assets,
+    // but we notify listeners so the Hero component can draw the first frame.
     notifyListeners();
     return assetCache;
   });

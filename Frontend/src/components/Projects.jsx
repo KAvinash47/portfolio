@@ -20,10 +20,10 @@ const ProjectCard = ({ project, index, targetScale }) => {
   const rotateX = useTransform(scrollYProgress, [0, 1], [5, 0]);
 
   return (
-    <div ref={container} className="h-screen flex items-center justify-center sticky -top-10 ml-8 md:ml-0 md:px-0">
+    <div ref={container} className="h-screen flex items-center justify-center sticky -top-10 px-4 md:px-0">
       <Motion.div 
         style={{ scale, rotateX, opacity, top: `calc(${index * 25}px)` }} 
-        className="relative flex flex-col md:flex-row h-[70vh] w-full max-w-7xl rounded-3xl bg-[#0c0c0c] border border-white/20 overflow-hidden origin-top shadow-[0_40px_100px_rgba(0,0,0,0.8)]"
+        className="relative flex flex-col md:flex-row h-[75vh] md:h-[70vh] w-full max-w-7xl rounded-3xl bg-[#0c0c0c] border border-white/20 overflow-hidden origin-top shadow-[0_40px_100px_rgba(0,0,0,0.8)]"
       >
         {/* Animated Background Depth - keep these but they'll be subtle through the solid bg if we want, or just behind text */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">

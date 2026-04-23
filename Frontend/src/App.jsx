@@ -1,15 +1,10 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Background3D from './components/Background3D';
 import LoadingScreen from './components/ui/LoadingScreen';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
-import PortfolioChatbot from './components/chatbot/PortfolioChatbot';
 import Footer from './components/Footer';
 import CustomCursor from './components/ui/CustomCursor';
 import CyberpunkOverlay from './components/ui/CyberpunkOverlay';
@@ -21,6 +16,12 @@ import GlitchChaos from './components/ui/GlitchChaos';
 import TerminalCLI from './components/ui/TerminalCLI';
 
 import SmoothScroll from './components/ui/SmoothScroll';
+
+const Experience = React.lazy(() => import('./components/Experience'));
+const Projects = React.lazy(() => import('./components/Projects'));
+const Skills = React.lazy(() => import('./components/Skills'));
+const Contact = React.lazy(() => import('./components/Contact'));
+const PortfolioChatbot = React.lazy(() => import('./components/chatbot/PortfolioChatbot'));
 
 function App() {
   const konamiTriggered = useKonamiCode();
@@ -91,10 +92,12 @@ function App() {
               <main>
                 <Hero />
                 <About />
-                <Experience />
-                <Projects />
-                <Skills />
-                <Contact />
+                <Suspense fallback={null}>
+                  <Experience />
+                  <Projects />
+                  <Skills />
+                  <Contact />
+                </Suspense>
               </main>
 
               <Footer />
@@ -105,8 +108,10 @@ function App() {
                 <div className="pointer-events-auto fixed inset-0 z-[125] bg-slate-950/55 backdrop-blur-md" />
               )}
             </AnimatePresence>
-
-            <PortfolioChatbot isOpen={isChatOpen} onOpenChange={setIsChatOpen} />
+            
+            <Suspense fallback={null}>
+              <PortfolioChatbot isOpen={isChatOpen} onOpenChange={setIsChatOpen} />
+            </Suspense>
           </div>
         </SmoothScroll>
       </MatrixProvider>

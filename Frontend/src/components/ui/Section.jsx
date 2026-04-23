@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export const Section = ({ id, children, className = "" }) => {
   return (
-    <section id={id} className={`py-20 px-6 relative ${className}`}>
+    <section id={id} className={`py-12 md:py-24 px-4 sm:px-6 relative ${className}`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
